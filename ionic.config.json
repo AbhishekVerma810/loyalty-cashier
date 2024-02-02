@@ -1,0 +1,7 @@
+{
+  "name": "loyalty-cashier",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

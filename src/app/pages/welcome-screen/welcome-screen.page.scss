@@ -1,0 +1,55 @@
+ion-header {
+    display: none;
+  }
+  
+  ion-content {
+    --background: linear-gradient(0deg,var(--secondary-color), var(--primary-color) 100%);
+    margin-left: auto;
+     margin-right: auto;
+     .main_Container {
+      width: 75vh;
+      height: 75vh;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(180deg, #FFD201 0%, #FCAA17 100%);
+      box-shadow: 140px 140px 0px 135px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: _ngcontent-ng-c644672017_fadeIn 1.5s ease;
+      margin: auto;
+      margin-top: 8%;
+      .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+  
+        h2 {
+          color: #FFF;
+          font-size: 55px;
+          font-weight: 700;
+        }
+  
+        h1 {
+          color: #FFF;
+          text-align: center;
+          text-shadow: 0px 5px 2px rgba(0, 0, 0, 0.25);
+          font-size: 80px;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }

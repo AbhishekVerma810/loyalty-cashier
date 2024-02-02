@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="main_Container">
+    <div class="right_Design"></div>
+    <div class="wellcome_design">
+      <p style="margin-top: 7rem;">Welcome to</p>
+     <div style="--border-radius: 50%;"><ion-img class="app_logo" [src]="businessData.data.logo"></ion-img></div>
+     <h4>{{businessData.data.business_name}}</h4>
+      <div class="social_media">
+        <a style="text-decoration: none;" href="{{businessData.data.instagram_handle}}">
+          <div class="icons_instagram">
+          <img class="icons" src="../../../assets/images/skill-icons_instagram.svg">
+            <p>loyaltyapp</p>
+         </div>
+        </a>
+        <a style="text-decoration: none;" href="{{businessData.data.facebook_handle}}">
+        <div class="icons_instagram">
+           <img class="icons" src="../../../assets/images/logos_facebook.svg">
+          <p>loyaltyapp</p>
+        </div>
+      </a>
+      </div>
+  </div>
+<div class="left_Design">
+      <p class="brand_name">Login In</p>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form">
+          <p class="input_label">Enter Your Unique ID</p>
+          <ion-item>
+            <ion-input type="email" [(ngModel)]="email" name="email" placeholder="Your ID"></ion-input>
+          </ion-item>
+          <p class="input_label" style="margin-top: 3rem;">Password</p>
+          <ion-item>
+            <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Password"></ion-input>
+          </ion-item>
+          <ion-button shape="round" expand="full" type="submit">Login</ion-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

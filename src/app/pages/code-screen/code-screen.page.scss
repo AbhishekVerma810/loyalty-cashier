@@ -1,0 +1,288 @@
+ion-header {
+    display: none;
+}
+
+ion-content {
+    --background: #F1FAFB;
+
+    .main_Container {
+        display: flex;
+        height: 99vh;
+        justify-content: space-between;
+
+
+        .right_Design {
+            width: 44px;
+            height: 100%;
+            border-radius: 0px 40px 40px 0px;
+            background: linear-gradient(0deg,var(--secondary-color), var(--primary-color) 100%);
+        }
+
+        .wellcome_design {
+            width: 50%;
+            padding: 31px;
+
+            p {
+                color: #000;
+                text-align: center;
+                font-size: 40px;
+                font-weight: 400;
+                text-transform: capitalize;
+            }
+
+            .div {
+                width: 120px;
+                height: 120px;
+                background: white;
+                border-radius: 50%;
+                display: flex;
+                position: absolute;
+                left: 23%;
+
+                .refresh_icon {
+                    width: 60px;
+                    height: 60px;
+                    margin: auto;
+                    display: block;
+                }
+            }
+
+
+            .app_logo {
+                // width: 557px;
+                height: 358px;
+
+                margin: auto;
+                display: block;
+            }
+
+            h4 {
+                color: #000;
+                font-size: 35px;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            h5 {
+                color: #414141;
+                text-align: center;
+                font-size: 25px;
+                font-weight: 400;
+            }
+
+            .social_media {
+                display: flex;
+                margin-top: 3vw;
+                justify-content: space-around;
+
+                .icons_instagram {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px;
+
+                    .icons {
+                        width: 35px;
+                        height: 35px;
+                        padding-right: 12px;
+
+                    }
+
+                    p {
+                        color: #4B4B4B;
+                        font-size: 22px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        .left_Design {
+            text-align: center;
+            width: 50%;
+            height: 100%;
+            border-radius: 40px 0px 0px 40px;
+            background: linear-gradient(0deg,var(--secondary-color), var(--primary-color) 100%);
+            .Reward_image {
+                display: inline-block;
+                margin-top: 30px;
+
+                ion-img {
+                    width: 234px;
+                    height: 56px;
+                    flex-shrink: 0;
+                }
+            }
+
+            p {
+                color: #FFF;
+                text-align: center;
+                font-size: 21px;
+                font-weight: 500;
+                margin-top: 35px;
+            }
+
+            ion-input {
+                margin-top: 35px;
+                color: #FFF;
+                text-align: start;
+                font-size: 38px;
+                font-weight: 600;
+                text-align: center;
+                border-color: transparent !important;
+            }
+            
+            ion-input.ng-invalid {
+                border-color: transparent !important;
+            }
+            
+            ion-input.ng-valid {
+                border-color: transparent;
+            }
+            
+
+            .divider {
+                height: 1px;
+                width: 56.14%;
+                background: #F1FAFB;
+                margin: 0 auto;
+            }
+
+            .keyboard {
+                text-align: center;
+                width: 68%;
+                display: inline-block;
+                margin-top: 3rem;
+                text-align: center;
+
+                #keyboard_number {
+                    display: inline-block;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 80px;
+                    background: #F1FAFB;
+                    box-shadow: 0px 0px 1px 0px rgba(25, 26, 46, 0.20);
+                    text-align: center;
+                    vertical-align: middle;
+                    margin-right: 20px;
+                    margin-bottom: 30px;
+                    margin-left: 20px;
+
+                    p {
+                        display: inline-block;
+                        vertical-align: middle;
+                        line-height: 80px;
+                        color: #4F4F4F;
+                        font-size: 45px;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+
+                    .keyboard_image {
+                        width: 55px;
+                        height: 83px;
+                    }
+                }
+            }
+
+            .buttom_text {
+                color: #FFF;
+                text-align: center;
+                font-size: 14px;
+                font-weight: 400;
+                margin: 0 20% 0 20%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+    .wellcome_design {
+        width: 50%;
+        padding: 31px;
+        p{
+            font-size: 27px !important;
+        }.div {
+            width: 91px !important;
+            height: 96px !important;
+            top: 23% !important;
+            left: 23% !important;
+            .refresh_icon {
+                width: 40px !important;
+                height: 40px !important;
+            }
+        }
+        .app_logo {
+            height: 358px;
+        }
+        h4 {
+            font-size: 35px;
+        }
+        h5 {
+            font-size: 25px;
+        }
+
+        .social_media {
+            .icons_instagram {
+                .icons {
+                    width: 35px;
+                    height: 35px;
+                    padding-right: 12px;
+                }
+
+                p {
+                    font-size: 18px !important;
+                }
+            }
+        }
+    }
+
+    .main_Container .left_Design .keyboard {
+        width: 100% !important;
+        margin-left: 0% !important;
+        margin-right: 0% !important;
+    }
+}
+
+@media screen and (min-width: 820px) and (max-width: 1100px) {
+    .wellcome_design {
+        p {
+            font-size: 27px !important;
+        }
+
+        .div {
+            width: 91px !important;
+            height: 96px !important;
+            top: 15% !important;
+            left: 23% !important;
+
+            .refresh_icon {
+                width: 40px !important;
+                height: 40px !important;
+            }
+        }
+
+        .app_logo {
+            height: 358px;
+
+        }
+
+        .social_media {
+            .icons_instagram {
+                .icons {
+                    width: 35px;
+                    height: 35px;
+                    padding-right: 12px;
+                }
+
+                p {
+                    font-size: 18px !important;
+                }
+            }
+        }
+    }.main_Container .left_Design .keyboard {
+        width: 100% !important;
+        margin-left: 0% !important;
+        margin-right: 0% !important;
+    }
+}

@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>customerInterface</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+
+  <ion-img
+    src="../../../assets/images/replicate-prediction-sf2cp4dbvolgbtagxp6wgiosh4-removebg-preview 1.svg"></ion-img>
+  <div class="top_text">
+    <div>
+      <p>Hey ! <span>{{businessData.data.name}}</span></p>
+    </div>
+    <div class="btn">
+      <ion-button class="exit_btn" slot="end" color="green" (click)="exitSession()">Exit Session</ion-button>
+      <ion-button slot="end" class="log_out" color="red" (click)="logOut()">Log Out</ion-button>
+    </div>
+  </div>
+  <div class="container" *ngIf="availableUser">
+    <div class="left_container">
+      <p>Customer Logged In</p>
+      <h3>{{clientInfo && clientInfo.name ? clientInfo.name :''}}</h3>
+      <p>Customer's Visit</p>
+      <h3>{{clientInfo && clientInfo.Customer_Visits ? clientInfo.Customer_Visits.length-1 :'1st'}}</h3>
+      <p>Loyalty Points Balance</p>
+      <div class="points">
+        <img class="points_img" src="../../../assets/images/sprial 1 (1).svg" />
+        <h3 class="coines">{{clientInfo && clientInfo.total_loyalty_point ? clientInfo.total_loyalty_point :'0'}}</h3>
+      </div>
+      <ion-button (click)="resetSelectionFun()">Reset</ion-button>
+    </div>
+    <div class="right_container">
+      <p class="billing_amount">Total Billing Amount</p>
+      <ion-input type="number" placeholder="$100" class="input_box" (keyup)="onInputChange($event)" [(ngModel)]="amount"></ion-input>
+      <p class="eraned_reward"><span>{{clientInfo && clientInfo.name ? clientInfo.name :''}}</span> will earn {{loyaltypoints}} loyalty points rewards on this purchase</p>
+      <h3 class="availbale_offer">Available offers for {{clientInfo && clientInfo.name ? clientInfo.name :''}}</h3>  
+      <div>
+        <img (click)="goPrev()" class="rigth_arrow" src="../../../assets/images/rigth_arrow.svg">
+      </div>
+      <div>
+        <img (click)="goNext()" class="left_arrow" src="../../../assets/images/left_arrow.svg">
+      </div>
+      <swiper-container #swiper (afterinit)="swiperReady()" (slidechange)="swiperSlideChanged($event)"> 
+          <swiper-slide *ngFor="let i of rewardinfo">
+            <div class="card-container" >
+              <ion-card class="ion_card" (click)="selectOffer(i)" [ngClass]="{'selectedOffer': selectedOffer == i.id && clientInfo && clientInfo.total_loyalty_point && clientInfo.total_loyalty_point > 0, 'elseClass': selectedOffer == i.id && clientInfo && !clientInfo.total_loyalty_point || selectedOffer == i.id && i.loyalty_point > clientInfo.total_loyalty_point}">
+                <ion-card-header class="ion_card_header">
+                  <div class="header_imagebackgound">
+                    <img class="header_image"
+                      src="../../../assets/images/replicate-prediction-jh25wmtbmijuoxn6twqh2ktxbq 1.png">
+                  </div>
+                </ion-card-header>
+                <ion-card-content class="ion-card-content">
+                  <p class="text">{{i.title}}</p>
+                  <div class="card_text">
+                    <ion-img class="content_image" src="../../../assets/images/sprial 1 (1).svg"></ion-img>
+                    <p class="coines">{{i.loyalty_point}}</p>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+           </div>
+          </swiper-slide>
+       </swiper-container>
+      <div class="bottom_text">
+        <ion-button class="Submit_btn" (click)="submitOrderFun()">Submit</ion-button>
+        <p class="waiting_text" *ngIf="Waiting">Waiting for jenny’s confirmation</p>
+        <!-- <ion-button class="Cancel_btn" *ngIf="cancle_btn">Cancel</ion-button> -->
+      </div>
+    </div>
+  </div>
+  <div class="user_not_found" *ngIf="noUser">
+    <h3>No Customer Logged In</h3>
+    <ion-button class="order_call_btn" [routerLink]="['/customer-login/OnCall']">Order On Call</ion-button>
+   </div>
+</ion-content>
